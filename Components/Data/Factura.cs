@@ -1,18 +1,24 @@
 ﻿using System;
 
-public class Factura
 
+namespace factura.Components.Data
 {
-	public int Identificador { get; set; }
 
-	public DateTime Fecha { get; set; }
+	public class Factura
 
-	public string Nombre { get; set; }
+	{
+		public int Identificador { get; set; }
 
-	public string Articulo { get; set; }
+		public DateTime Fecha { get; set; }
 
-	public double Precio { get; set; }
+		public string Nombre { get; set; }
+
+		public string Articulo { get; set; }
+
+		public double Precio { get; set; }
 
 
 
+	}
 }
+
