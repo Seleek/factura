@@ -9,7 +9,7 @@ namespace factura.Components.Data
 	{
 		public int Identificador { get; set; }
 
-		public DateTime Fecha { get; set; }
+		public DateOnly Fecha { get; set; }
 
 		public string Nombre { get; set; }
 
