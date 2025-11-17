@@ -30,7 +30,10 @@
 		</h1>
 	</div>
 	<div>
-		<input type="date" @bind="nuevaFactura.Fecha" placeholder="Fecha de factura"/>
+		<input type="date"
+		 id="fecha"
+		 @bind="nuevaFactura.Fecha"
+		 placeholder="Fecha de factura" />
 		<input @bind="nuevaFactura.Nombre" placeholder="Nombre del cliente"/>
 		<input @bind="nuevaFactura.Articulo" placeholder="Articulo"/>
 		<input type="number" @bind="nuevaFactura.Precio" placeholder="Precio"/>
@@ -65,7 +68,6 @@
 	</tbody>
 </table>
 </body>
-
 
 
 
