@@ -1,6 +1,7 @@
 using factura.Components;
 using factura.Components.Servicios;
 using factura.Components.Data;
+using Microsoft.Data.Sqlite;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,5 +29,17 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+string ruta = "facturas.db";
+
+using var conexion = new SqliteConnection($"DataSource={ruta}");
+conexion.Open();
+var comando = conexion.CreateCommand();
+comando.CommandText = @"
+create table if not exists
+facturas(id integer primary key not null, fecha date not null,
+nombre text not null, articulo text not null, precio integer not null)
+";
+comando.ExecuteNonQuery();
 
 app.Run();

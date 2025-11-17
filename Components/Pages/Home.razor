@@ -29,7 +29,13 @@
 			Lista de facturas
 		</h1>
 	</div>
-
+	<div>
+		<input type="date" @bind="nuevaFactura.Fecha" placeholder="Fecha de factura"/>
+		<input @bind="nuevaFactura.Nombre" placeholder="Nombre del cliente"/>
+		<input @bind="nuevaFactura.Articulo" placeholder="Articulo"/>
+		<input type="number" @bind="nuevaFactura.Precio" placeholder="Precio"/>
+			<!-- <button @onclick="AgregarFactura">Agregar Factura</button> -->
+	</div>
 </div>
 <table class="table">
 	<thead class="table-dark">
@@ -52,6 +58,10 @@
 				<td class="text-end">@factura.Precio.ToString("C")</td>
 			</tr>
 		}
+		<tr>
+			<td scope="col" colspan="4" style="text-align:end">TOTAL</td>
+			<td class="text-end">23456</td>
+		</tr>
 	</tbody>
 </table>
 </body>
